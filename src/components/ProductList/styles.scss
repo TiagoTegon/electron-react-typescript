@@ -1,0 +1,32 @@
+.productsList {
+    width: 80vw;
+    height: 50vh;
+    border-radius: 3px;
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    overflow:auto;
+  }
+  
+  .productListContainer{
+    display: flex;
+    justify-content: center;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .statusCheckbox {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .itsDone {
+    text-decoration: line-through;
+  }
+  
+  .cursorPointer {
+    cursor: pointer
+  }
