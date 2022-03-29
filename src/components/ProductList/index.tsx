@@ -5,16 +5,16 @@ export const ProductList = ({ productList }: any) => {
   return (
     <div className="productListContainer">
       <div className="productsList">
-        <table>
+        <table className="productTable" >
           <thead>
             <tr>
-              <th>Nome:</th>
-              <th>Preço:</th>
-              <th>Descrição:</th>
-              <th>Quantidade:</th>
+              <th>Nome</th>
+              <th>Preço</th>
+              <th>Descrição</th>
+              <th>Quantidade</th>
             </tr>
           </thead>
-          {/* <tbody>
+          <tbody>
             {Object.entries(productList).map((item: any) => (
               <tr key={item[1]._id}>
                 <td>{item[1].productName}</td>
@@ -23,7 +23,7 @@ export const ProductList = ({ productList }: any) => {
                 <td>{item[1].productAmount}</td>
               </tr>
             ))}
-          </tbody>  */}
+          </tbody> 
         </table>
       </div>
     </div>

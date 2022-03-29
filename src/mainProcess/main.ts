@@ -37,7 +37,7 @@ const run = async () => {
   const _window = new BrowserWindow({
     width: 960,
     minWidth: 960,
-    height: 600,
+    height: 650,
     minHeight: 600,
     frame: false,
     webPreferences: {

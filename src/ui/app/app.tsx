@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import './app.scss'
-import logo from '../../assets/logo.svg'
 import { ProductList } from 'src/components/ProductList'
 import { createProduct, findAllProducts } from 'src/controller/productController'
 import { AddProduct } from 'src/components/AddProduct'
@@ -43,12 +42,15 @@ export const App: React.FC = () => {
           Learn React
         </a>
       </header> */}
+      <div className="productListDiv">
+        <h3 className="title">Lista de Produtos</h3>
+        <ProductList productList={productList}/>
+      </div>
 
-      <p>Testando o Funcionamento2</p>
-      <AddProduct tempId={tempId} handleCreateProduct={handleCreateProduct}/>
-      <hr />
-      
-      <ProductList productList={productList}/>
+      <div className="productAddDiv">
+        <h3 className="title">Produto</h3>
+        <AddProduct tempId={tempId} handleCreateProduct={handleCreateProduct}/>
+      </div>
     </div>
   )
 }

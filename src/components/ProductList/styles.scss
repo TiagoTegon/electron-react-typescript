@@ -14,7 +14,7 @@
     justify-content: center;
   }
   
-  table {
+  .productTable {
     width: 100%;
   }
   
@@ -30,3 +30,8 @@
   .cursorPointer {
     cursor: pointer
   }
+
+  th {
+    border-bottom: 2px solid black;
+  }
+

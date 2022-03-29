@@ -1,0 +1,67 @@
+.inputName {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+  margin-top: 5px;
+  height: 20px;
+  padding: 0 10 0 10;
+  width: 80vw;
+  margin-bottom: 5px;
+}
+
+.inputPrice {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+  height: 20px;
+  padding: 0 10 0 10;
+  width: 80vw;
+  margin-bottom: 5px;
+}
+
+.inputDescription {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+  height: 20px;
+  padding: 0 10 0 10;
+  width: 80vw;
+  margin-bottom: 5px;
+}
+
+.inputAmount {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+  height: 20px;
+  padding: 0 10 0 10;
+  width: 80vw;
+  margin-bottom: 5px;
+}
+
+.btnSubmit {
+  background-color: #008a9c;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: rgb(250, 220, 220);
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+  height: 40px;
+  padding: 0 10 0 10;
+  width: 80vw;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}

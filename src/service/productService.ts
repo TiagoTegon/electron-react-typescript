@@ -9,7 +9,7 @@ export const create = async (data: IProduct) => {
 }
 
 export const findAll = async () => {
-  const productList = (await mongoConnectDb()).collection(`productList`).find()
+  const productList = (await mongoConnectDb()).collection(`productList`).find({}).toArray()
   mongoDisconnect()
   return productList
 }
