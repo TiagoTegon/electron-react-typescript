@@ -11,7 +11,7 @@ yarn
 
 ## Utilização como Desenvolvedor
 
-Execute o script `dev` para iniciar o projeto em modo Desenvolvedor. Ele recarrega com alterções no código.
+Execute o script `dev` para iniciar o projeto em modo Desenvolvedor. Ele recarrega com alterações no código.
 
 ```bash
 yarn dev
@@ -50,7 +50,7 @@ A aplicação deve ser simples, não queremos tomar o seu tempo fazendo uma aval
 Sabemos que fazer o setup de uma aplicação usando Electron + React é bem chatinho, então nosso template deve dar uma boa adiantada pra você criar a aplicação. Ele já é o modelo que usamos aqui, então é bem legal se você já se habituar com ele.
 https://github.com/brcambui/electron-react-typescript
 
-## Desenvolvimento
+## Desenvolvimento:
 
 Para a realização do Desafio, o template disponibilizado foi clonado e os pacotes do banco de dados exigido foram instalados:
 
