@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { findOneProduct } from "src/controller/productController"
 import './styles.scss'
 
-export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateProduct }: any) => {
+export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateProduct, eventExcludeProduct }: any) => {
 
   const [productName, setProductName] = useState<string>(``)
   const [productPrice, setProductPrice] = useState<number>(0)
@@ -10,18 +10,23 @@ export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateP
   const [productAmount, setProductAmount] = useState<number>(0)
   const [productId, setProductId] = useState<string>(``)
 
+  function clearFields() {
+    setProductName(``)
+    setProductPrice(0)
+    setProductDescription(``)
+    setProductAmount(0)
+  }
+
   const submitProduct = async (productName: string, productPrice: number, productDescription: string, productAmount: number) => {
     if(productName !== ``) {
       if(productId === ``) {
         await eventCreateProduct(productName, productPrice, productDescription, productAmount)
         console.log(`Produto criado ${productName}`)
-        setProductName(``)
-        setProductPrice(0)
-        setProductDescription(``)
-        setProductAmount(0)
+        clearFields()
       }
       else {
         await eventUpdateProduct(productId, productName, productPrice, productDescription, productAmount)
+        clearFields()
       }
     }
   }
@@ -31,14 +36,15 @@ export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateP
       setProductId(id)
       setProductName(product!.productName)
       setProductPrice(product!.productPrice)
-      setProductDescription(product!.producDescription)
+      setProductDescription(product!.productDescription)
       setProductAmount(product!.productAmount)
       setTempId(``)
     })
   }
 
-  const deleteProduct = async () => {
-
+  const deleteProduct = async (id: string) => {
+    await eventExcludeProduct(id)
+    clearFields()
   }
 
   return (
@@ -59,7 +65,7 @@ export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateP
       <div>
         <button className="btnSubmit" onClick={() => submitProduct(productName, productPrice, productDescription, productAmount)}>Cadastrar Produto</button>
         <button className="btnUpdate" onClick={() => submitProduct(productName, productPrice, productDescription, productAmount)}>Atualizar Produto</button>
-        <button className="btnDelete" onClick={() => deleteProduct()}>Excluir Produto</button>
+        <button className="btnDelete" onClick={() => deleteProduct(productId)}>Excluir Produto</button>
       </div>
     </div>
   )

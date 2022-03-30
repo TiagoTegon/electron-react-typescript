@@ -1,5 +1,5 @@
-import { mongoConnectDb } from "src/database"
+import { connectDb } from "src/database/mongo"
 
 export async function createCollection() {
-  return (await mongoConnectDb()).createCollection(`productList`, () =>{})
+  return (await connectDb()).createCollection(`productList`, () =>{})
 }

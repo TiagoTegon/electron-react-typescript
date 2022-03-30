@@ -1,5 +1,5 @@
 import { IProduct } from "src/interfaces/productInterface"
-import { create, findAll, findOne, update } from "../service/productService"
+import { create, findAll, findOne, update, exclude } from "../service/productService"
 
 export const createProduct = (product: IProduct) => {
   return create(product)
@@ -15,4 +15,8 @@ export const findOneProduct = (id: string) => {
 
 export const updateProduct = (id: string, product: IProduct) => {
   return update(id, product)
+}
+
+export const excludeProduct = (id: string) => {
+  return exclude(id)
 }

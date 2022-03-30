@@ -6,10 +6,10 @@ async function mongoConnect() {
   return (await MongoClient.connect(url))
 }
 
-export async function mongoConnectDb() {
+export async function connectDb() {
   return (await mongoConnect()).db(`electronchallenge`)
 }
 
-export async function mongoDisconnect() {
+export async function disconnectDb() {
   return (await mongoConnect()).close()
 }
