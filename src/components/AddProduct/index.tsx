@@ -18,7 +18,7 @@ export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateP
   }
 
   const submitProduct = async (productName: string, productPrice: number, productDescription: string, productAmount: number) => {
-    if(productName !== ``) {
+    if(productName !== `` && productPrice !== 0 && productDescription !== `` && productAmount !== 0) {
       if(productId === ``) {
         await eventCreateProduct(productName, productPrice, productDescription, productAmount)
         console.log(`Produto criado ${productName}`)
@@ -43,8 +43,10 @@ export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateP
   }
 
   const deleteProduct = async (id: string) => {
-    await eventExcludeProduct(id)
-    clearFields()
+    if(productName !== `` && productPrice !== 0 && productDescription !== `` && productAmount !== 0) {
+      await eventExcludeProduct(id)
+      clearFields()
+    }
   }
 
   return (
