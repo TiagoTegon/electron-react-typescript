@@ -37,10 +37,8 @@ export const App: React.FC = () => {
     await listProducts()
   }
 
-  const eventClick = async(id: string, click: number) => {
-    if(click === 1) {
-      setTempId(id)
-    }
+  const eventClick = async(id: string) => {
+    setTempId(id)
     await listProducts()
   }
 
