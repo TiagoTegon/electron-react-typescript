@@ -42,7 +42,7 @@ export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateP
     })
   }
 
-  const deleteProduct = async (id: string) => {
+  const excludeProduct = async (id: string) => {
     if(productName !== `` && productPrice !== 0 && productDescription !== `` && productAmount !== 0) {
       await eventExcludeProduct(id)
       clearFields()
@@ -67,7 +67,7 @@ export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateP
       <div>
         <button className="btnSubmit" onClick={() => submitProduct(productName, productPrice, productDescription, productAmount)}>Cadastrar Produto</button>
         <button className="btnUpdate" onClick={() => submitProduct(productName, productPrice, productDescription, productAmount)}>Atualizar Produto</button>
-        <button className="btnDelete" onClick={() => deleteProduct(productId)}>Excluir Produto</button>
+        <button className="btnExclude" onClick={() => excludeProduct(productId)}>Excluir Produto</button>
       </div>
     </div>
   )
