@@ -1,7 +1,8 @@
 import React, { useState } from "react"
+import { findOneProduct } from "src/controller/productController"
 import './styles.scss'
 
-export const AddProduct = ({ tempId, setTempId, handleCreateProduct }: any) => {
+export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateProduct }: any) => {
 
   const [productName, setProductName] = useState<string>(``)
   const [productPrice, setProductPrice] = useState<number>(0)
@@ -12,19 +13,37 @@ export const AddProduct = ({ tempId, setTempId, handleCreateProduct }: any) => {
   const submitProduct = async (productName: string, productPrice: number, productDescription: string, productAmount: number) => {
     if(productName !== ``) {
       if(productId === ``) {
-        await handleCreateProduct(productName, productPrice, productDescription, productAmount)
+        await eventCreateProduct(productName, productPrice, productDescription, productAmount)
         console.log(`Produto criado ${productName}`)
         setProductName(``)
         setProductPrice(0)
         setProductDescription(``)
         setProductAmount(0)
       }
-      //update else
+      else {
+        await eventUpdateProduct(productId, productName, productPrice, productDescription, productAmount)
+      }
     }
+  }
+
+  const selectProduct = (id: string) => {
+    findOneProduct(id).then(product => {
+      setProductId(id)
+      setProductName(product!.productName)
+      setProductPrice(product!.productPrice)
+      setProductDescription(product!.producDescription)
+      setProductAmount(product!.productAmount)
+      setTempId(``)
+    })
+  }
+
+  const deleteProduct = async () => {
+
   }
 
   return (
     <div className="container">
+      {tempId !== `` ? (selectProduct(tempId)) : setTempId(``)} 
       <div>
         <input className="inputName" type="text" placeholder="Nome do Produto" value={productName} onChange={(event) => { setProductName(event.target.value) }} />
       </div>
@@ -38,7 +57,9 @@ export const AddProduct = ({ tempId, setTempId, handleCreateProduct }: any) => {
         <input className="inputAmount" type="number" placeholder="Quantidade do Produto" value={productAmount} onChange={(event) => { setProductAmount(event.target.valueAsNumber) }} />
       </div>
       <div>
-        <button className="btnSubmit" onClick={() => submitProduct(productName, productPrice, productDescription, productAmount)}>{productId === `` ? `Cadastrar Produto ` : `Atualizar Tarefa`}</button>
+        <button className="btnSubmit" onClick={() => submitProduct(productName, productPrice, productDescription, productAmount)}>Cadastrar Produto</button>
+        <button className="btnUpdate" onClick={() => submitProduct(productName, productPrice, productDescription, productAmount)}>Atualizar Produto</button>
+        <button className="btnDelete" onClick={() => deleteProduct()}>Excluir Produto</button>
       </div>
     </div>
   )

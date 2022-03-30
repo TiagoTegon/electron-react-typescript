@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.scss'
 
-export const ProductList = ({ productList }: any) => {
+export const ProductList = ({ productList, eventClick }: any) => {
   return (
     <div className="productListContainer">
       <div className="productsList">
@@ -21,6 +21,9 @@ export const ProductList = ({ productList }: any) => {
                 <td>{item[1].productPrice}</td>
                 <td>{item[1].productDescription}</td>
                 <td>{item[1].productAmount}</td>
+                <td>
+                  <button onClick={() => eventClick(item[1]._id, 1)}>Edit</button>
+                </td>
               </tr>
             ))}
           </tbody> 

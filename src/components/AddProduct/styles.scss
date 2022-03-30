@@ -57,7 +57,33 @@
   font-weight: bold;
   height: 40px;
   padding: 0 10 0 10;
-  width: 80vw;
+  width: 30vw;
+}
+
+.btnUpdate {
+  background-color: #fcff5f;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: rgb(250, 220, 220);
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+  height: 40px;
+  padding: 0 10 0 10;
+  width: 30vw;
+}
+
+.btnDelete {
+  background-color: #ff0000;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: rgb(250, 220, 220);
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+  height: 40px;
+  padding: 0 10 0 10;
+  width: 30vw;
 }
 
 .container {
