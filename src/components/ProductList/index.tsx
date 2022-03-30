@@ -22,8 +22,8 @@ export const ProductList = ({ productList, eventClick }: any) => {
                 <td>{item[1].productPrice}</td>
                 <td>{item[1].productDescription}</td>
                 <td>{item[1].productAmount}</td>
-                <td>
-                  <button onClick={() => eventClick(item[1]._id)}>→</button>
+                <td className="tdEdit">
+                  <button className="btnEdit" onClick={() => eventClick(item[1]._id)}>Editar</button>
                 </td>
               </tr>
             ))}

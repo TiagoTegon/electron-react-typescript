@@ -53,20 +53,23 @@ export const AddProduct = ({ tempId, setTempId, eventCreateProduct, eventUpdateP
     <div className="container">
       {tempId !== `` ? (selectProduct(tempId)) : setTempId(``)} 
       <div>
+        <text>Nome:</text>
         <input className="inputName" type="text" placeholder="Nome do Produto" value={productName} onChange={(event) => { setProductName(event.target.value) }} />
       </div>
       <div>
+        <text>Preço:</text>
         <input className="inputPrice" type="number" placeholder="Preço do Produto" value={productPrice} onChange={(event) => { setProductPrice(event.target.valueAsNumber) }} />
       </div>
       <div>
+        <text>Descrição:</text>
         <input className="inputDescription" type="text" placeholder="Descrição do Produto" value={productDescription} onChange={(event) => { setProductDescription(event.target.value) }} />
       </div>
       <div>
+        <text>Quantidade:</text>
         <input className="inputAmount" type="number" placeholder="Quantidade do Produto" value={productAmount} onChange={(event) => { setProductAmount(event.target.valueAsNumber) }} />
       </div>
       <div>
-        <button className="btnSubmit" onClick={() => submitProduct(productName, productPrice, productDescription, productAmount)}>Cadastrar Produto</button>
-        <button className="btnUpdate" onClick={() => submitProduct(productName, productPrice, productDescription, productAmount)}>Atualizar Produto</button>
+        <button className="btnSubmit" onClick={() => submitProduct(productName, productPrice, productDescription, productAmount)}>Salvar Produto</button>
         <button className="btnExclude" onClick={() => excludeProduct(productId)}>Excluir Produto</button>
       </div>
     </div>
